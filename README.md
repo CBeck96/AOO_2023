@@ -9,33 +9,28 @@ Results:
 
 Conclusion:
 
+
+$$ G(t) = 1 - \frac{F(t)}{F(A)}$$
+
+
 ## Functions
 
-`CIF()`   
-`median_age()`   
-`quantile_age()`   
-`mean_age()`   
-`mean_age_of_onset()`
-`nIR()`   
-
-`MAOO.R`   
-`IR_res.R`   
-
-Computes the CIF using the prodlim package  
-
-Calculates the quantile age of onset from the CIF
-
-Calculates the mean age of onset from the CIF
-
-Computes the CIF, median, and mean age of onset
-
-Computes the IR
+| R-function            | Calculates                                  |
+| --------------------- | ------------------------------------------- |
+| `CIF()`               | The cumulative incidence function           |
+| `median_age()`        | The median age from the CIF                 |
+| `quantile_age()`      | The quantile age from the CIF               |
+| `mean_age()`          | The mean age from the CIF                   |
+| `mean_age_of_onset()` | Combines the funcions above to one function |
+| `nIR()`               | The incidence rate                          |
 
 ### Analysis
 
-## Libraries used
+In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. There is a parallel and unparallel version of the procedure. 
 
-| Library       |  Description                                        |
+### Libraries used
+
+| Library       |  Uasge                                       |
 | ------------- | --------------------------------------------------- |
 | prodlim       | Used for computing CIF in mean_age_of_onset()       |
 | Epi           | Used in nIR()                                       |
@@ -44,6 +39,7 @@ Computes the IR
 | doParallel    | Used to run the code quicker                        |
 | foreach       | Used to run the code quicker                        |
 
+In each file for a R-function, the needed packages are mentioned. 
 
 ## Data description
 
