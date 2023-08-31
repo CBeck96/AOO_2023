@@ -9,10 +9,6 @@ Results:
 
 Conclusion:
 
-
-$$ G(t) = 1 - \frac{F(t)}{F(A)}$$
-
-
 ## Functions
 
 | R-function            | Calculates                                  |
@@ -72,3 +68,22 @@ Example of dates as continuous variables:
 ## Data visualization
 
 Interactive data visualization website:
+
+## Math
+
+Lets define $A$ as the maximum age of the participants. In the paper we have set $A=80$. Further let $Ã$ denote the median age of onset. 
+When computing the mean age of onset for cause $i$ in a competing risk set-up. 
+Note that the cumulative incidence function (CIF), in a competing risk set-up, is defined as the Aalen-Johansen estimator:
+$$F_i (t) = \int^t_0 S(u) \alpha_i (u) du$$,
+where $S(t)$ is the survival function and $\alpha_i (t)$ is the cause-specific hazard got cause $i$ at time $t$. 
+Since we are only intrested in the cause *Diagnosed*, we will subpress the $i$ in the future. 
+The median can be found as $Â := \frac{F (A)}{2}$. The idea is the to transfer the CIF to a probability; 
+therefore, we divide the the CIF with $F(A)$, this is then subtracted form 1, s.t.
+$$G(t) = 1 - \frac{F(t)}{F(A)} .$$
+The mean age of onset can then be computed as 
+$$\mu = \int^A_0 G(t) dt = \int^A_0 1 -  \frac{F(t)}{F(A)}  dt = A - \frac{1}{F(A)} \int^A_0 F(t) dt.$$
+It can be seen as a restircted mean age of onset. 
+
+![image](https://github.com/CBeck96/AOO2023/assets/43062260/9e70d6d5-71ee-4d21-9239-aec82975b0e5)
+![image](https://github.com/CBeck96/AOO2023/assets/43062260/b60396c4-0586-4026-8e54-aeee9a9e2cef)
+
