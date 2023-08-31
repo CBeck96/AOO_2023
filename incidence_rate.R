@@ -1,4 +1,4 @@
-# IR calculations -----------------------------------------------------
+# IR calculations 
 
 # dat    : Data used
 # knot   : Knots used for splines
@@ -6,16 +6,14 @@
 # pv     : Values predictions are made on
 # method : Method used for split (Lexis, Multi)
 
-# Note: Use the outcome of "prep_IR" as data in the following function
-# Check quantile s.t. they are not identical
-
 nIR <- function(dat, knot, sp, pv,  method = "Lexis"){
   # Transorm the data into lexis format.
   Ldat <- Lexis(entry = list(age = doinc - dobth, per = doinc),
                 exit = list(per = doend),
-                exit.status = factor(censor_stat, labels = c("Well", "Event",
-                                                            "Emigration", "Dead")),
-               data = dat)
+                exit.status = factor(censor_stat, 
+                                     labels = c("Well", "Event",
+                                                "Emigration", "Dead")),
+                data = dat)
   ### Method used for splitting:
   if(method == "Lexis"){
     b <- quantile(Ldat[Ldat[,9] == 1,1], (1:(sp-1))/sp) 

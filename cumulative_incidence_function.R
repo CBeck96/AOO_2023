@@ -4,9 +4,11 @@
 # se     : Indicator to include confidence intervals. Default is False.
 
 # This function works in the set-up of competing risk, where the states are:
-# Healthy, Diagnosed, dead, and emigrated.
+# Healthy, Diagnosed, death, and emigrated. The function also takes into account 
+# late entry. 
 
 CIF <- function(dat , se = FALSE){
+  # Tstart and Tslut is the start and exit age respectively. 
   CIP <- prodlim(Hist(entry = Tstart , time = Tslut , censor_stat) ~ 1 , 
                  data = dat)
   CIP_df <- data.frame("time" = CIP$time ,

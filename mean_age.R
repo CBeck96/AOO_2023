@@ -1,4 +1,6 @@
-# Mean by age integrating under survival curve ----------------------------
+# Mean by age integrating under survival curve 
+
+# This is done so the integrale is more accurate, than using rectangles.
 
 # Computes the mean age of onset by integrating the area below the curve G
 # Generate pseudo survival function

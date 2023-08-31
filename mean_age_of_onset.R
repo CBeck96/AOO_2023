@@ -1,4 +1,7 @@
-# Mean age of onset -------------------------------------------------------
+# Mean age of onset 
+
+# This function combins the functions CIF(), mean_age(), median_age(), and 
+# quantile_age into one function. 
 
 # Generate pseudo survival function
 # F(t) = int_0^t S(u)a(u)du
@@ -32,7 +35,7 @@ mean_age_of_onset <- function(df, rawdat = FALSE, medians = TRUE, se = FALSE){
     am <- median_age(ndf,ndf$G1)$time
     a <- mean(am)
     out_median <- data.frame("Cause" = 1, 
-                            "Median 1" = a)
+                             "Median 1" = a)
     out$median <- out_median
   }
   # Computes the 25% and 75% quantile ages
