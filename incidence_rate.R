@@ -7,7 +7,7 @@
 # method : Method used for split (Lexis, Multi)
 
 nIR <- function(dat, knot, sp, pv,  method = "Lexis"){
-  # Transorm the data into lexis format.
+  # Transform the data into lexis format.
   Ldat <- Lexis(entry = list(age = doinc - dobth, per = doinc),
                 exit = list(per = doend),
                 exit.status = factor(censor_stat, 
