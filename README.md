@@ -1,24 +1,22 @@
 # AOO2023
 Code used in the results to the paper: "A comprehensie analysis of age of onset and cumulative incidence of mental disorders: a Danish register study". 
 
+Short about the paper
 Abstract:
-
 Methods:
-
 Results:
-
 Conclusion:
 
 ## Functions
 
-| R-function            | Calculates                                  |
-| --------------------- | ------------------------------------------- |
-| `CIF()`               | The cumulative incidence function           |
-| `median_age()`        | The median age from the CIF                 |
-| `quantile_age()`      | The quantile age from the CIF               |
-| `mean_age()`          | The mean age from the CIF                   |
-| `mean_age_of_onset()` | Combines the funcions above to one function |
-| `nIR()`               | The incidence rate                          |
+| R-function            | Calculates                                   |
+| --------------------- | -------------------------------------------- |
+| `CIF()`               | The cumulative incidence function            |
+| `median_age()`        | The median age from the CIF                  |
+| `quantile_age()`      | The quantile age from the CIF                |
+| `mean_age()`          | The mean age from the CIF                    |
+| `mean_age_of_onset()` | Combines the functions above to one function |
+| `nIR()`               | The incidence rate                           |
 
 ### Analysis
 
@@ -26,7 +24,7 @@ In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. Th
 
 ### Libraries used
 
-| Library       |  Uasge                                       |
+| Library       |  Uasge                                              |
 | ------------- | --------------------------------------------------- |
 | prodlim       | Used for computing CIF in mean_age_of_onset()       |
 | Epi           | Used in nIR()                                       |
@@ -35,11 +33,11 @@ In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. Th
 | doParallel    | Used to run the code quicker                        |
 | foreach       | Used to run the code quicker                        |
 
-In each file for a R-function, the needed packages are mentioned. 
+At the end of each R-file, for the functions, the packages uesd is listed below. 
 
 ## Data description
 
-The study looks at individuals who are alive and healthy, with no prior diangose, in Denmark at the begining of 2004 or your 1'st, 5'th or 10'th birthday (Depending on the earliest age of onset of the diagnose) whatever comes later. The study ends at the end of 2021, diagnose, emigration or death. The data is prepared such it has the following columns. 
+The study looks at individuals who are alive and healthy, with no prior diangose, in Denmark at the begining of 2004 or your 1'st, 5'th or 10'th birthday (Depending on the earliest age of onset of the diagnose) whatever comes later. The study ends at the end of 2021, diagnose, emigration or death. After cleaning the data, there is a data-set for each diagnose of intrest and it has the following columns.
 
 | Column number | Column name   | Description                                                                        |
 | ------------- | ------------- | ---------------------------------------------------------------------------------- |
@@ -67,7 +65,7 @@ Example of dates as continuous variables:
 
 ## Data visualization
 
-Interactive data visualization website:
+Interactive data visualization website: NEED LINK
 
 ## Math
 
