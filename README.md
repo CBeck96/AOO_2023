@@ -65,7 +65,7 @@ Example of dates as continuous variables:
 
 ## Data visualization
 
-Interactive data visualization website: NEED LINK
+To see the interactive data vizualization website, click [here.](https://csievert.shinyapps.io/mental-aoo-danish/)
 
 ## Math
 
