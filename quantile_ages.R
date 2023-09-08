@@ -1,8 +1,12 @@
 # Quantile ages 
 
-# d : The ages of the sample
+# Input:
+# d : The ages of the sample 
 # x : The probabilities from the cumulative incidence
 # q : qunatile value. If q = 0.5, quantile_age gives the same as median_age
+
+# Output:
+#   - Returns the median and quantile respectively.
 
 # Computes the median age of onset from the cumulative incidence
 median_age <- function(d,x){

@@ -1,10 +1,32 @@
 # IR calculations 
 
-# dat    : Data used
+# Packages used:
+# Epi
+# popEpi
+
+# Input:
+# dat    : Data used. Must only contain one sex
 # knot   : Knots used for splines
 # sp     : Probability in each interval for split
 # pv     : Values predictions are made on
 # method : Method used for split (Lexis, Multi)
+
+# Output:
+#   - Returns a list containing:
+#       1) Data frame of the predicted incidence rates and confidence interval:
+#             - Time given in ages
+#             - Incidence rates
+#             - Lower bound of confidence interval
+#             - Upper bound of confidence interval
+#       2) Data frame of the number of counts and person years:
+#             - Time given in ages
+#             - Incidence rates points (D/Y)
+#             - The count of cases at time t (D)
+#             - The sum of person years at time t (Y)
+#       3) Sex of the data.
+#       4) A vector of the splits used in splitting of the Lexis data
+#       5) Retrun the vector pv given in the function
+#       6) Metod used for the splitting 
 
 nIR <- function(dat, knot, sp, pv,  method = "Lexis"){
   # Transform the data into lexis format.
@@ -56,7 +78,3 @@ nIR <- function(dat, knot, sp, pv,  method = "Lexis"){
               "Method" = method)
   return(out)
 }
-
-# Packages used:
-# Epi
-# popEpi

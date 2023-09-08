@@ -1,18 +1,35 @@
 # Mean age of onset 
 
-# This function combins the functions CIF(), mean_age(), median_age(), and 
+# This function combines the functions CIF(), mean_age(), median_age(), and 
 # quantile_age into one function. 
-
 # Generate pseudo survival function
 # F(t) = int_0^t S(u)a(u)du
 # G(t) = 1 - F(t)/F(A)
 # where F(A) = max(F(t))
 
+# Packages used:
+# prodlim
+# pracma
+
+# Input:
 # df      : Data used. Can either be raw data or the output of the CIF-function.
 # rawdat  : Indicates if the format of the data. Default is FALSE.   
 # medians : Indicator for computing the median in the output. Default is TRUE.
 # se      : Indicates if the function will have confidence intervals in 
 #           its output. Is only useful if rawdat is TRUE.
+
+# Output:
+#   - Returns a list containing values for the cause diagnosed:
+#       1) The mean. Computed with mean_age()
+#       2) The median. Computed with median_age()
+#       3) The first and third quantile. Computed with quantile_age  
+#       4) The pseudo survival function.
+#       5) The value of F(A). Where A = 80.
+#       6) The output from the function CIF().
+#       7) The lower bound from the function CIF().
+#       8) The upper bound from the function CIF().
+#       9) The confidence interval for the estimae of the mean.
+#      10) The model output from the function CIF(). 
 
 mean_age_of_onset <- function(df, rawdat = FALSE, medians = TRUE, se = FALSE){
   ndf <- df
@@ -25,8 +42,7 @@ mean_age_of_onset <- function(df, rawdat = FALSE, medians = TRUE, se = FALSE){
   ndf$G1 <- 1 - ndf$prob.1/max(ndf$prob.1)
   # Mean by integrating under the survival curve.
   aa <- mean_age(ndf$time,ndf$G1)
-  out_mean <- data.frame("Cause" = 1, 
-                        "Mean 1" = aa)
+  out_mean <- data.frame("Cause" = 1, "Mean" = aa)
   
   out <- list("Mean" = out_mean)
   # Computes the median if medians is equal TRUE.
@@ -34,8 +50,7 @@ mean_age_of_onset <- function(df, rawdat = FALSE, medians = TRUE, se = FALSE){
     # Find median age, ie age at which half probability mass is below and above.
     am <- median_age(ndf,ndf$G1)$time
     a <- mean(am)
-    out_median <- data.frame("Cause" = 1, 
-                             "Median 1" = a)
+    out_median <- data.frame("Cause" = 1,  "Median" = a)
     out$median <- out_median
   }
   # Computes the 25% and 75% quantile ages
@@ -67,7 +82,3 @@ mean_age_of_onset <- function(df, rawdat = FALSE, medians = TRUE, se = FALSE){
   }
   return(out)
 } 
-
-# Packages used:
-# prodlim
-# pracma
