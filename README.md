@@ -33,7 +33,7 @@ In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. Th
 | doParallel    | Used to run the code quicker                        |
 | foreach       | Used to run the code quicker                        |
 
-At each of the R-scripts, the packages uesd is listed. 
+At each of the R-scripts, the packages used in a function is listed. 
 
 ## Data description
 
