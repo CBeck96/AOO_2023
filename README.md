@@ -1,11 +1,7 @@
 # AOO2023
-Code used in the results to the paper: "A comprehensie analysis of age of onset and cumulative incidence of mental disorders: a Danish register study". 
+Code used to get the results to the paper: "A comprehensie analysis of age of onset and cumulative incidence of mental disorders: a Danish register study". 
 
-Short about the paper
-Abstract:
-Methods:
-Results:
-Conclusion:
+Short about the paper: Abstract? Methods? Results? Conclusion?
 
 ## Functions
 
