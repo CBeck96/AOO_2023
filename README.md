@@ -20,14 +20,14 @@ In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. Th
 
 ### Libraries used
 
-| Library       |  Used in                                    |
-| ------------- | ------------------------------------------- |
-| prodlim       | Computing CIF in mean_age_of_onset()        |
-| Epi           | nIR()                                       |
-| popEpi        | nIR()                                       |
-| pracma        | mean_age() for calculating area below curve |
-| doParallel    | Run the code quicker                        |
-| foreach       | Run the code quicker                        |
+| Library       |  Used in                                        |
+| ------------- | ----------------------------------------------- |
+| prodlim       | Computing CIF in mean_age_of_onset()            |
+| Epi           | nIR()                                           |
+| popEpi        | nIR()                                           |
+| pracma        | mean_age() for calculating area below the curve |
+| doParallel    | Run the code quicker                            |
+| foreach       | Run the code quicker                            |
 
 At each of the R-scripts, the packages used in a function is listed. 
 
