@@ -3,7 +3,7 @@
 # This function works in the set-up of competing risk, where the states are:
 # Healthy, Diagnosed, death, and emigrated. The function also takes into account 
 # late entry. 
-# Tstart,Tslut, and censor_stat is desriped in the Data description. 
+# Tstart,Tslut, and censor_stat is described in the Data description. 
 
 # Packages used:
 # prodlim
@@ -14,7 +14,7 @@
 
 # Output: 
 # Gives a list of the following
-#   1) CIR: A data frame containing 
+#   1) CIR: A data frame containing: 
 #        - time given in ages
 #        - Survival 
 #        - Cumulative incidence for the state diagnosed

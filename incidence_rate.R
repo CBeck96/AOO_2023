@@ -1,15 +1,19 @@
-# IR calculations 
+# Incidence rates calculations 
 
 # Packages used:
 # Epi
 # popEpi
 
 # Input:
-# dat    : Data used. Must only contain one sex
-# knot   : Knots used for splines
-# sp     : Probability in each interval for split
-# pv     : Values predictions are made on
-# method : Method used for split (Lexis, Multi)
+# dat    : Data used. Must only contain one sex. dat is a data frame.
+# knot   : Knots used for splines. Used when fitting the GLM. knot is a vector 
+#          of numerical values.
+# sp     : Probability in each interval for split. Used for the splitting of 
+#          data. sp is a vector of numerical values between 0 and 1.  
+# pv     : Values predictions are made on from the fitted GLM. 
+#          pv is a vector of numerical values, 
+#          which represents the ages at which predictions are made.
+# method : Method used for split (Lexis, Multi). Default is Lexis. 
 
 # Output:
 #   - Returns a list containing:
@@ -19,17 +23,17 @@
 #             - Lower bound of confidence interval
 #             - Upper bound of confidence interval
 #       2) Data frame of the number of counts and person years:
-#             - Time given in ages
-#             - Incidence rates points (D/Y)
+#             - Time given in ages (t)
+#             - Incidence rates points at time t (D/Y)
 #             - The count of cases at time t (D)
 #             - The sum of person years at time t (Y)
 #       3) Sex of the data.
 #       4) A vector of the splits used in splitting of the Lexis data
-#       5) Retrun the vector pv given in the function
-#       6) Metod used for the splitting 
+#       5) Returns the vector pv given in the function
+#       6) Method used for the splitting of the Lexis data
 
 nIR <- function(dat, knot, sp, pv,  method = "Lexis"){
-  # Transform the data into lexis format.
+  # Transforms the data into lexis format.
   Ldat <- Lexis(entry = list(age = doinc - dobth, per = doinc),
                 exit = list(per = doend),
                 exit.status = factor(censor_stat, 
@@ -69,7 +73,7 @@ nIR <- function(dat, knot, sp, pv,  method = "Lexis"){
                     "irp" = xtab[,"D"]/xtab[,"Y"], 
                     "D" = xtab[,"D"], 
                     "Y" = xtab[,"Y"]) 
-  # Adds the two previous data frames to the output
+  # Adds the two previous data frames in a list for the output
   out <- list("Incidens rate" = ir,
               "IR points" = irp,
               "KQN" = sdat$KQN[1],

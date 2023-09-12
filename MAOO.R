@@ -7,21 +7,29 @@
 # prodlim
 # pracma
 
-# Packages used for parallization:
+# Packages used for parallelization:
 # foreach
 # doParallel
 
+# Internal diagnose names and earliest age of onset 
+EAOO <- data.frame("Diag" = c("D10","D11","D12","D20","D21","D22","D30","D31",
+                              "D33","D41","D42","D51","D52","D61","D62","D63",
+                              "D70","D81","D81","D91","D92","Dyy"),
+                   "eaoo" = c(10,10,10,10,10,10,10,10,10,
+                              5,5,1,1,10,10,10,1,1,1,1,1,1))
+# Saves the number of diagnosis to run the analysis on
+nDiag <- nrow(EAOO)
 # Vector for the different sex ("K": Female, "M": Male)
 KQN <- c("K","M")
 # Create list to save results.
 MAOO_Res <- list()
-# Runs analysis for all diagnoses and both sex.
+# Runs analysis for all diagnoses and both sexes.
 
-## Parallized ##
-cl <- makeCluster(23)
+## Parallelized ##
+cl <- makeCluster(2)
 doParallel::registerDoParallel(cl)
 
-MAOO_Res <- foreach(i = 1:22, .packages = c("prodlim","pracma")) %dopar% {
+MAOO_Res <- foreach(i = 1:nDiag, .packages = c("prodlim","pracma")) %dopar% {
   # Creates an empty list
   res_list <- list()
   for(q in 1:2){ 
@@ -34,21 +42,19 @@ MAOO_Res <- foreach(i = 1:22, .packages = c("prodlim","pracma")) %dopar% {
                                        se = TRUE)
   }
   # Assigns the internal diagnose code and sex as name
-  names(res_list) <- c(paste(diag[i],"K", sep = ""),paste(diag[i],"M", sep = ""))
+  names(res_list) <- c(paste(EAOO$Diag[i],"K", sep = ""),
+                       paste(EAOO$Diag[i],"M", sep = ""))
   res_list
 } ; stopCluster(cl)
 
 
-for(i in 1:22){
+for(i in 1:nDiag){
   # Assigns the internal diagnose code as name
-  names(MAOO_Res)[i] <- paste(diag[i])
-  if(i %% 5 == 0){
-    cat("Iteration ", i, "\n")
-  }
+  names(MAOO_Res)[i] <- paste(EAOO$Diag[i])
 }
 
-## Unparallized ##
-for(i in 1:22){
+## Unparallelized ##
+for(i in 1:nDiag){
   # Creates an empty list
   res_list <- list()
   for(q in 1:2){
@@ -61,11 +67,9 @@ for(i in 1:22){
                                       se = TRUE)
   }
   # Assigns the internal diagnose code and sex as name
-  names(res_list) <- c(paste(diag[i],"K", sep = ""),paste(diag[i],"M", sep = ""))
+  names(res_list) <- c(paste(EAOO$Diag[i],"K", sep = ""),
+                       paste(EAOO$Diag[i],"M", sep = ""))
   MAOO_Res[[i]] <- res_list
   # Assigns the internal diagnose code as name
-  names(MAOO_Res)[i] <-  paste(diag[i])
-  if(i %% 5 == 0){
-    cat("Iteration ", i, "\n")
-  }
+  names(MAOO_Res)[i] <-  paste(EAOO$Diag[i])
 }
