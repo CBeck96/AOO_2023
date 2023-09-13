@@ -22,7 +22,8 @@ a_DXX = ylim_IR_DXX[2] - b_DXX*ylim_CIF_DXX[1]
 
 # Here the we create the data frame of the values we wish to plot, with the 
 # scaled values. In addition the values are scaled to get per 10 000 person-years
-# and per 100 persons respectively.
+# and per 100 persons respectively. The data used is the output from the files
+# 'MAOO' and 'IR_res'.
 DXX <- data.frame("time" = c(DXXF$CIF$time,
                              DXXM$CIF$time,
                              DXXF_IR$time,

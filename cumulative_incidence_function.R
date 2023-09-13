@@ -1,7 +1,7 @@
 # Cumulative incidence function 
 
 # This function works in the set-up of competing risk, where the states are:
-# Healthy, Diagnosed, death, and emigrated. The function also takes into account 
+# Healthy, Diagnosed, emigration, and death. The function also takes into account 
 # late entry. 
 # Tstart,Tslut, and censor_stat is described in the Data description. 
 
@@ -18,8 +18,8 @@
 #        - time given in ages
 #        - Survival 
 #        - Cumulative incidence for the state diagnosed
-#        - Cumulative incidence for the state death
 #        - Cumulative incidence for the state emigration
+#        - Cumulative incidence for the state death
 #   2) lower: Lower confidence limits (Structure as above, without time)
 #   3) upper: Upper confidence limits (Structure as above, without time)
 #   4) model: Model fitted on the data
