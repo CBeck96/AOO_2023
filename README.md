@@ -5,6 +5,8 @@ Short about the paper: Abstract? Methods? Results? Conclusion?
 
 ## Functions
 
+Below is the R-functions created to make the analysis for the paper. 
+
 | R-function            | Calculates                                   |
 | --------------------- | -------------------------------------------- |
 | `CIF()`               | The cumulative incidence function            |
@@ -13,10 +15,6 @@ Short about the paper: Abstract? Methods? Results? Conclusion?
 | `mean_age()`          | The mean age from the CIF                    |
 | `mean_age_of_onset()` | Combines the functions above to one function |
 | `nIR()`               | The incidence rate                           |
-
-### Analysis
-
-In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. There is a parallel and unparallel version of the procedures. The code to create the plots and panel plots can be found in the file `figures.R`. 
 
 ### Libraries used
 
@@ -33,7 +31,11 @@ In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. Th
 
 At each of the R-scripts, the packages used in a function is listed. 
 
-## Data description
+### Analysis
+
+In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. There is a parallel and unparallel version of the procedures. The code to create the plots and panel plots can be found in the file `figures.R`. The incidence rate and cumulative incidence got from the analysis can be found in the file `AOO_Results.csv`. It holds the predicted incidence rate and cumulative incidence for all diagnosis and both sexes. The confidence interval for both estimates are given, in addition it also contains the confidence interval for the predictions.  
+
+## Description of input data 
 
 The study looks at individuals who are alive and healthy, with no prior diangose, in Denmark at the begining of 2004 or your 1'st, 5'th or 10'th birthday (Depending on the earliest age of onset of the diagnose) whatever comes later. The study ends at the end of 2021. After cleaning the data, there is a data-set for each diagnose of intrest and it has the following columns.
 
@@ -63,7 +65,7 @@ Example of dates as continuous variables:
 
 ## Data visualization
 
-To see the interactive data vizualization website, click [here.](https://csievert.shinyapps.io/mental-aoo-danish/)
+To see the interactive data vizualization website, click [here.](https://csievert.shinyapps.io/mental-aoo-danish/) The data uesd to make this vizualization can be found through the link or in the file `AOO_Results.csv`.
 
 ## Math
 
