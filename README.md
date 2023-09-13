@@ -31,7 +31,7 @@ Below is the R-functions created to make the analysis for the paper.
 
 At each of the R-scripts, the packages used in a function is listed. 
 
-### Analysis
+## Analysis
 
 In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. There is a parallel and unparallel version of the procedures. The code to create the plots and panel plots can be found in the file `figures.R`. The incidence rate and cumulative incidence got from the analysis can be found in the file `AOO_Results.csv`. It holds the predicted incidence rate and cumulative incidence for all diagnosis and both sexes. The confidence interval for both estimates are given, in addition it also contains the confidence interval for the predictions.  
 
