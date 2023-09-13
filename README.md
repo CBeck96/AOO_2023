@@ -16,7 +16,7 @@ Short about the paper: Abstract? Methods? Results? Conclusion?
 
 ### Analysis
 
-In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. There is a parallel and unparallel version of the procedures. 
+In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. There is a parallel and unparallel version of the procedures. The code to create the plots and panel plots can be found in the file 'figures'.
 
 ### Libraries used
 
@@ -28,6 +28,8 @@ In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. Th
 | pracma        | mean_age() for calculating area below the curve |
 | doParallel    | Run the code quicker                            |
 | foreach       | Run the code quicker                            |
+| ggplot2       | Creating plots                                  |
+| gridExtra     | Creating panel plots                            |
 
 At each of the R-scripts, the packages used in a function is listed. 
 
