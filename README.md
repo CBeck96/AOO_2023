@@ -1,4 +1,3 @@
-[dataViz.csv](https://github.com/CBeck96/AOO2023/files/12594519/dataViz.csv)
 # AOO2023
 Theis is a github repository for the code used for the analysis conducted in the paper: "A comprehensie analysis of age of onset and cumulative incidence of mental disorders: a Danish register study". 
 
@@ -17,7 +16,7 @@ Short about the paper: Abstract? Methods? Results? Conclusion?
 
 ### Analysis
 
-In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. There is a parallel and unparallel version of the procedures. The code to create the plots and panel plots can be found in the file 'figures'.
+In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. There is a parallel and unparallel version of the procedures. The code to create the plots and panel plots can be found in the file `figures.R`. 
 
 ### Libraries used
 
