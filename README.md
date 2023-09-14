@@ -1,7 +1,5 @@
-# AOO2023
-Theis is a github repository for the code used for the analysis conducted in the paper: "A comprehensie analysis of age of onset and cumulative incidence of mental disorders: a Danish register study". 
-
-Short about the paper: Abstract? Methods? Results? Conclusion?
+# Age of onset (AOO2023)
+This is a github repository for the code used for the analysis conducted in the paper: "A comprehensie analysis of age of onset and cumulative incidence of mental disorders: a Danish register study". (LINK)
 
 ## Functions
 
@@ -18,7 +16,7 @@ Below is the R-functions created to make the analysis for the paper.
 
 ### Libraries used
 
-| Library       |  Used in                                        |
+| Library       | Used in                                         |
 | ------------- | ----------------------------------------------- |
 | prodlim       | Computing CIF in mean_age_of_onset()            |
 | Epi           | nIR()                                           |
@@ -37,7 +35,7 @@ In the files `MAOO.R` and `IR_res.R` the above functions are run on the data. Th
 
 ## Description of input data 
 
-The study looks at individuals who are alive and healthy, with no prior diangose, in Denmark at the begining of 2004 or your 1'st, 5'th or 10'th birthday (Depending on the earliest age of onset of the diagnose) whatever comes later. The study ends at the end of 2021. After cleaning the data, there is a data-set for each diagnose of intrest and it has the following columns.
+The study looks at individuals who are alive and healthy in Denmark at the begining of 2004 or your 1'st, 5'th or 10'th birthday (Depending on the earliest age of onset of the diagnose) whatever comes later. The study ends at the end of 2021. After cleaning the data, there is a data-set for each diagnose of intrest and it has the following columns.
 
 | Column number | Column name   | Description                                                                        |
 | ------------- | ------------- | ---------------------------------------------------------------------------------- |
@@ -62,6 +60,9 @@ Example of dates as continuous variables:
 | 18/03/2006    | 2006.208         |
 | 07/07/2007    | 2007.511         |
 | 30/11/2016    | 2016.913         |
+
+### Availability of data and materials
+Owing to the sensitive nature of these data, individual level data can be accessed only through secure servers where download of individual level information is prohibited.  Each scientific project must be approved before initiation, and approval is granted to a specific Danish research institution. International researchers may gain data access through collaboration with a Danish research institution.
 
 ## Data visualization
 
