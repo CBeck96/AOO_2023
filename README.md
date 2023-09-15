@@ -62,7 +62,8 @@ Example of dates as continuous variables:
 | 30/11/2016    | 2016.913         |
 
 ### Availability of data and materials
-Owing to the sensitive nature of these data, individual level data can be accessed only through secure servers where download of individual level information is prohibited.  Each scientific project must be approved before initiation, and approval is granted to a specific Danish research institution. International researchers may gain data access through collaboration with a Danish research institution.
+
+Data for this study os property of Statistic Denmark and the Danish Health Data Authority. The data are available from the authorities, but restrictions apply.
 
 ## Data visualization
 
