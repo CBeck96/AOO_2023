@@ -1,5 +1,5 @@
 # Age of onset (AOO2023)
-This is a github repository for the code used for the analysis conducted in the paper: "A comprehensie analysis of age of onset and cumulative incidence of mental disorders: a Danish register study". (LINK)
+This is a github repository for the code used for the analysis conducted in the paper: "A comprehensie analysis of age of onset and cumulative incidence of mental disorders: a Danish register study" published in Acta Psychiatrica Scandinavica. [here.](http://doi.org/10.1111/acps.13682)
 
 ## Functions
 
