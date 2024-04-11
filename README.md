@@ -75,7 +75,7 @@ Lets define $A$ as the maximum age of the participants. In this paper we have se
 When computing the mean age of onset for cause $i$ in a competing risk set-up. 
 Note that the cumulative incidence function (CIF), in a competing risk set-up, is defined as the Aalen-Johansen estimator:
 $$F_i (t) = \int^t_0 S(u) \alpha_i (u) du,$$
-where $S(t)$ is the survival function and $\alpha_i (t)$ is the cause-specific hazard got cause $i$ at time $t$. 
+where $S(t)$ is the survival function and $\alpha_i (t)$ is the cause-specific hazard for cause $i$ at time $t$. 
 Since we are only interested in the cause *Diagnosed*, we will subpress the $i$ in the future. 
 The median can be found as $Â := \frac{F (A)}{2}$. The idea is the to transfer the CIF to a probability; 
 therefore, we divide the the CIF with $F(A)$, this is then subtracted from 1, s.t.
