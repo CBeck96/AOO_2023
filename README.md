@@ -71,7 +71,7 @@ To see the interactive data vizualization website, click [here.](https://csiever
 
 ## Math
 
-Lets define $A$ as the maximum age of the participants. In this paper we have set $A=80$. Further let $Ã$ denote the median age of onset. 
+Lets define $A$ as the maximum age of the participants. In this paper we have set $A=8$. Further let $Ã$ denote the median age of onset. 
 we wish to compute the mean age of onset for cause $i$ in a competing risk set-up. 
 Note that the cumulative incidence function (CIF), in a competing risk set-up, is defined as the Aalen-Johansen estimator:
 $$F_i (t) = \int^t_0 S(u) \alpha_i (u) du,$$
